@@ -8,25 +8,31 @@ namespace Projeto_Final
 {
     class ListaStock
     {
-        public List<Congelado> stock;
+        public List<Produto> stock;
 
         public ListaStock()
         {
-            this.stock = new List<Congelado>();
+            this.stock = new List<Produto>();
         }
-        public void lerStock()
+
+        public void imprimirStock()
         {
-            foreach (Congelado item in stock)
+            foreach (Produto item in stock)
             {
                 Console.WriteLine(item.ToString());
             }
         }
-        public void adicionarStock(int num, Congelado congelado)
+        public void adicionarStockCongelado(Congelado congelado)
         {
-            for (int i = 0; i < num; i++)
-            {
-                stock.Add(congelado);
-            }
+            stock.Add(congelado);
+        }
+        public void adicionarStockPrateleira(Prateleira prateleira)
+        {
+            stock.Add(prateleira);
+        }
+        public void adicionarStockEnlatado(Enlatado enlatado)
+        {
+            stock.Add(enlatado);
         }
     }
 }
