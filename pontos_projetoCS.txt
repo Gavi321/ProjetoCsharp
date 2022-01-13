@@ -1,0 +1,12 @@
+login; david
+
+criar funcionario;(gerente pode criar e apagar funcs, repositor adiciona stock, caixa vende)
+fatura (produtos comprados, nome do func e do cliente, valor total da conta calculado a partir dos produtos);
+stock, faturas e funcs guardados em ficheiro; diogo
+
+stock de produtos (congelados, prateleira e enlatados);
+adicionar stock;
+limpar stock; miguel
+
+menu para vender por categorias e fecha com 0;
+remover um produto; renato
