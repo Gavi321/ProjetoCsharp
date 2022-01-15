@@ -4,11 +4,17 @@ namespace Projeto_Final
 {
     class Program
     {
-        private static object listaStockEnlatados;
-
         static void Main(string[] args)
         {
-            int n = -1;
+
+            ListaFuncionarios listaFuncionarios = new ListaFuncionarios();
+            Funcionario admin = new Funcionario();
+
+            Funcionario gerente = admin.addFunc("diogo","diogo","diogo",Funcionario.tipoFunc.gerente);
+
+            Console.WriteLine(gerente.getCargo());
+
+            /*int n = -1;
             ListaCongelado listaAVender = new ListaCongelado();
             ListaStock listaStock = new ListaStock();
 
@@ -137,6 +143,6 @@ namespace Projeto_Final
                         break;
                 }
             }
-            }
+            }*/
         }
     }

@@ -15,6 +15,10 @@ namespace Projeto_Final
         
         public enum tipoFunc{gerente,repositor,caixa,};
                
+        public Funcionario()
+        {
+        }
+
         public void setNome(string nome)
         {
             this.nome = nome;
@@ -55,6 +59,18 @@ namespace Projeto_Final
             return cargo;
         }
 
-
+        public void addFunc(string nome, string username, string password, tipoFunc tipo)
+        {
+            if(tipo == tipoFunc.gerente)
+            {
+                Gerente(nome,username,password);
+            }else if(tipo == tipoFunc.repositor)
+            {
+                Repositor(nome,username,password);
+            }else if(tipo == tipoFunc.caixa)
+            {
+                Caixa(nome, username, password);
+            }
+        }
     }
 }
