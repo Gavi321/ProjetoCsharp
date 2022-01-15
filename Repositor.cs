@@ -8,15 +8,7 @@ namespace Projeto_Final
 {
     class Repositor : Funcionario
     {
-        private string nome;
-        public void setNome(string nome)
-        {
-            this.nome = nome;
-        }
-        public string getNome()
-        {
-            return nome;
-        }
+
         public Repositor(string nome, string username, string password)
         {
             tipoFunc cargo = tipoFunc.repositor;
