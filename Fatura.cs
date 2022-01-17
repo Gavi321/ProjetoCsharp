@@ -4,19 +4,27 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Projeto_Final
+namespace Csharp
 {
     class Fatura
     {
-        public List<Produto> fatura;
-        public Fatura()
+        public Dictionary<string, int> itens;
+        public float total;
+
+        public Fatura(Dictionary<string,int> itensComprados, float totalCompra)
         {
-            this.fatura = new List<Produto>();
+            itens = itensComprados;
+            total = totalCompra;
         }
-        public string imprimirFatura()
+        public void imprimirFatura()
         {
-             
-            return "";
+            Console.WriteLine("---Fatura---");
+            foreach (KeyValuePair<string, int> item in itens)
+            {
+                Console.WriteLine("" + item.Key + " " + item.Value + " uni.");
+                Console.WriteLine("-----------");
+            }
+            Console.WriteLine("Total: " + total.ToString("n2") + "$");
         }
     }
 }

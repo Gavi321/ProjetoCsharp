@@ -4,11 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Projeto_Final
+namespace Csharp
 {
     class Gerente : Funcionario
     {
-
         public Gerente(string nome, string username, string password)
         {
             tipoFunc cargo = tipoFunc.gerente;

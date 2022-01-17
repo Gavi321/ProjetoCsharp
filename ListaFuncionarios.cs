@@ -4,15 +4,15 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Projeto_Final
+namespace Csharp
 {
-    class ListaFuncionarios
+    internal class ListaFuncionarios
     {
-        public List<Funcionario> listaFuncionarios;
+        public List<Funcionario> lista;
 
         public ListaFuncionarios()
         {
-            listaFuncionarios = new List<Funcionario>();
+            lista = new List<Funcionario>();
         }
     }
 }

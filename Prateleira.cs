@@ -6,13 +6,15 @@ using System.Threading.Tasks;
 
 namespace Csharp
 {
-    class Congelado : Produto
+    class Prateleira : Produto
     {
-        public Congelado(string nome, float preco)
+
+        public Prateleira(string nome, float preco)
         {
             this.nome = nome;
             this.preco = preco;
         }
+
         public override string ToString()
         {
             return "nome: " + this.nome + " | preco: " + this.preco + "\n";
