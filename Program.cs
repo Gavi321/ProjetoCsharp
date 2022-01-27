@@ -16,22 +16,30 @@ namespace Csharp
             Congelado pescada = new Congelado("pescada", 1.21f);
             Prateleira oreo = new Prateleira("oreo", 1.60f);
 
-            listaAVender.addProdutoCongelado(rissois);
-            listaAVender.addProdutoCongelado(douradinhos);
-            listaAVender.addProdutoCongelado(pescada);
-            listaAVender.addProdutoPrateleira(oreo);
+            listaAVender.addProdutoCongelado("rissois", 0.93f);
+            listaAVender.addProdutoCongelado("douradinhos", 0.84f);
+            listaAVender.addProdutoCongelado("pescada", 1.21f);
+            listaAVender.addProdutoPrateleira("oreo", 1.60f);
 
             listaStock.addStockCongelado(2,rissois);
             listaStock.addStockCongelado(4,douradinhos);
             listaStock.addStockCongelado(1,pescada);
             listaStock.addStockPrateleira(4, oreo);
 
+            //listaStock.imprimirStock(listaStock.stock);
+
             Compra compra = new Compra();
 
+            compra.addItemCesto(rissois, 3);
             //compra.addItemCesto(oreo, 3);
-            compra.itens.Add(oreo.nome, 3);
-            compra.itens.Add(douradinhos.nome, 2);
-            compra.itens.Add(rissois.nome, 1);
+            compra.addItemCesto(oreo, 3);
+
+            //compra.addItemCesto(rissois, 2);
+            //compra.addItemCesto(oreo, 4);
+            //compra.itens.Add(oreo.nome, 3);
+            //compra.itens.Add(douradinhos.nome, 2);
+            //compra.itens.Add(rissois.nome, 1);
+
             /*foreach (KeyValuePair<string,int> item in compra.itens)
             {
                 Console.WriteLine("nome: " + item.Key + " | quant: " + item.Value);
@@ -43,7 +51,7 @@ namespace Csharp
 
             /*while (n != 0)
             {
-                Console.WriteLine("Menu:\n1- Adicionar Stock\n2- Ver Stock\n3- imprimirFaturaLimpar Stock\n0- Sair");
+                Console.WriteLine("Menu:\n1- Adicionar Stock\n2- Ver Stock\n3- imprimirFatura\n4- Limpar Stock\n0- Sair");
                 n = int.Parse(Console.ReadLine());
 
                 switch (n)

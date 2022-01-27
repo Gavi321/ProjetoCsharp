@@ -18,6 +18,7 @@ namespace Csharp
         public void imprimirStock(List<Produto> ListaProdutos)
         {
             var n = 0;
+            var aux = "";
             foreach (Produto produto in ListaProdutos)
             {
                 foreach (Produto itemStock in stock)
@@ -27,7 +28,15 @@ namespace Csharp
                         n++;
                     }
                 }
-                Console.Write("Produto: " + produto.nome + " | Stock: " + n + "\n");
+                if (produto.nome != aux)
+                {
+                    Console.Write("Produto: " + produto.nome + " | Stock: " + n + "\n");
+                    n = 0;
+                    aux = produto.nome;
+                }else
+                {
+                    n = 0;
+                }
             }
         }
 

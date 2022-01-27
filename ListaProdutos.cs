@@ -22,18 +22,21 @@ namespace Csharp
             }
         }
 
-        public void addProdutoCongelado(Congelado congelado)
+        public void addProdutoCongelado(string nome, float preco)
         {
+            Congelado congelado = new Congelado(nome, preco);
             produtos.Add(congelado);
         }
 
-        public void addProdutoPrateleira(Prateleira prateleira)
+        public void addProdutoPrateleira(string nome, float preco)
         {
+            Prateleira prateleira = new Prateleira(nome, preco);
             produtos.Add(prateleira);
         }
 
-        public void addProdutoEnlatado(Enlatado enlatado)
+        public void addProdutoEnlatado(string nome, float preco)
         {
+            Enlatado enlatado = new Enlatado(nome, preco);
             produtos.Add(enlatado);
         }
     }
