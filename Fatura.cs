@@ -6,8 +6,9 @@ using System.Runtime.Serialization.Formatters.Binary;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Csharp
+namespace Projeto_Final
 {
+    [Serializable]
     class Fatura
     {
         public Dictionary<string, int> itens;
@@ -18,6 +19,8 @@ namespace Csharp
             itens = itensComprados;
             total = totalCompra;
         }
+
+        public Fatura(string s) { }
         public void imprimirFatura()
         {
             Console.WriteLine("---Fatura---");
@@ -29,28 +32,28 @@ namespace Csharp
             Console.WriteLine("Total: " + total.ToString("n2") + "$");
         }
 
-        public static void Gravar(Fatura fatura)
+        public void Gravar(Fatura fatura)
         {
             string f1 = "faturas.bin";
-            BinaryFormatter b = new BinaryFormatter();
+            BinaryFormatter bf = new BinaryFormatter();
             FileStream f = File.Create(f1);
-            b.Serialize(f, fatura.listaDeQuadros);
+            bf.Serialize(f, fatura);
             f.Close();
         }
 
-        public static Museu LerFicheiro()
+        public static Fatura LerFatura()
         {
-            Museu result = new Museu("Falhei");
-            string nomeDoFicheiro = "Museu.teste";
-            BinaryFormatter b = new BinaryFormatter();
+            Fatura fatura = new("erro");
+            string f1 = "faturas.bin";
+            BinaryFormatter bf = new BinaryFormatter();
 
-            if (File.Exists(nomeDoFicheiro))
+            if (File.Exists(f1))
             {
-                FileStream f = File.OpenRead(nomeDoFicheiro);
-                result = b.Deserialize(f) as Museu;
+                FileStream f = File.OpenRead(f1);
+                fatura = bf.Deserialize(f) as Fatura;
                 f.Close();
             }
-            return result;
+            return fatura;
         }
     }
 }
